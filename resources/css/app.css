@@ -1,0 +1,466 @@
+/* Reset de base pour éliminer les marges et les paddings par défaut */
+body,
+h1,
+h4,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Style global */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Container global */
+.container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 0;
+}
+
+/* Header */
+header {
+    background-color: green;
+    color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.8em;
+}
+.header-title {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5em 1em;
+    transition: background 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background-color: green;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 1em 0;
+}
+
+footer .footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 0;
+}
+
+footer .footer-section h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+footer .footer-section p,
+footer .footer-section ul,
+footer .footer-section li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+footer .footer-section ul {
+    padding: 0;
+}
+
+footer .footer-section ul li {
+    margin: 5px 0;
+}
+
+footer .footer-section ul li a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer .footer-section ul li a:hover {
+    color: #fff;
+}
+
+.footer-bottom {
+    background-color: green;
+    color: #bbb;
+    padding: 10px 0;
+    font-size: 0.9em;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Réactivité pour les petits écrans */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li {
+        margin: 5px 0;
+    }
+
+    header nav ul li a {
+        display: block;
+        width: 100%;
+    }
+
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .footer-section {
+        margin: 20px 0;
+    }
+}
+/* Contenu global */
+.intro {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Fond semi-transparent pour le texte */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Style de la page principale */
+.intro button {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 8px;
+    animation: titleAnimation 3s infinite;
+}
+
+/* Animation de changement de couleur et de taille */
+@keyframes titleAnimation {
+    0% {
+        color: #0056b3;
+        transform: scale(1);
+    }
+    50% {
+        color: #ff6347;
+        transform: scale(1.2);
+    }
+    100% {
+        color: #0056b3;
+        transform: scale(1);
+    }
+}
+
+.intro h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.intro p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+    text-align: justify;
+}
+
+/* Style des images */
+.responsive-image {
+    margin: 20px 0;
+    border-radius: 8px;
+    max-width: 100%; /* L'image ne dépasse jamais la largeur de son conteneur */
+    height: auto; /* Garde les proportions de l'image */
+    width: 300px; /* Définit une largeur spécifique (peut être ajustée) */
+}
+/* Effet au survol */
+.responsive-image:hover {
+    transform: scale(1.1);
+    filter: brightness(1.2);
+}
+
+/* Style page nous soutenir */
+.column h1,
+h2,
+h3 {
+    color: #7f5323;
+}
+
+.columns {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.column {
+    flex: 1;
+    padding: 20px;
+    margin: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.column img {
+    max-width: 100%;
+    height: auto;
+}
+
+.column ul {
+    padding-left: 20px;
+}
+
+.column ul li {
+    margin-bottom: 10px;
+}
+
+.slider-container {
+    margin-top: 20px;
+}
+
+.slider {
+    background-color: #e9ecef;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.slider p {
+    margin-bottom: 15px;
+}
+
+.slider a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.slider a:hover {
+    text-decoration: underline;
+}
+/* Style du formulaire de contact */
+
+.contact-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.contact-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.contact-form h2 {
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+.form-group button {
+    padding: 10px 20px;
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #4cae4c;
+}
+
+.donne {
+    max-width: 600px;
+    margin: 0 auto; /* Centrer le formulaire sur la page */
+    padding: 20px;
+    background-color: #f9f9f9; /* Couleur de fond douce */
+    border: 1px solid #ddd; /* Bordure légère */
+    border-radius: 8px; /* Coins arrondis */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Légère ombre */
+    font-family: Arial, sans-serif;
+}
+
+.donne h1 {
+    text-align: center; /* Centrer le titre */
+    font-size: 24px; /* Taille du titre */
+    color: #333; /* Couleur du texte */
+    margin-bottom: 20px; /* Espacement en dessous */
+}
+
+.donne form {
+    display: flex;
+    flex-direction: column; /* Aligner les éléments en colonne */
+    gap: 15px; /* Espacement entre les champs */
+}
+
+.donne label {
+    font-size: 16px; /* Taille du texte des étiquettes */
+    color: #555; /* Couleur légèrement atténuée */
+    font-weight: bold;
+}
+
+.donne input[type="number"],
+.donne input[type="email"],
+.donne #card-element {
+    padding: 10px; /* Espacement interne */
+    font-size: 16px; /* Taille du texte */
+    border: 1px solid #ccc; /* Bordure grise */
+    border-radius: 4px; /* Coins arrondis */
+    background-color: #fff; /* Fond blanc */
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Légère ombre interne */
+}
+
+.donne input:focus,
+.donne #card-element:focus {
+    border-color: #007bff; /* Bordure bleue au focus */
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Lumière bleue */
+    outline: none; /* Supprime le contour */
+}
+
+.donne button {
+    padding: 12px; /* Espacement interne */
+    font-size: 18px; /* Taille du texte */
+    background-color: #007bff; /* Couleur bleue Bootstrap */
+    color: #fff; /* Texte blanc */
+    border: none; /* Supprime la bordure */
+    border-radius: 4px; /* Coins arrondis */
+    cursor: pointer; /* Curseur en main */
+    transition: background-color 0.3s ease; /* Animation douce */
+}
+
+.donne button:hover {
+    background-color: #0056b3; /* Couleur bleue plus foncée au survol */
+}
+
+.donne button:active {
+    background-color: #004085; /* Couleur bleue encore plus foncée lorsqu'on clique */
+}
+
+.donne #card-element {
+    border: 1px solid #ccc; /* Bordure comme les autres champs */
+    border-radius: 4px;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .donne {
+        padding: 15px; /* Réduction des marges sur petit écran */
+    }
+
+    .donne h1 {
+        font-size: 20px; /* Taille du titre réduite */
+    }
+
+    .donne button {
+        font-size: 16px; /* Taille du bouton réduite */
+    }
+}
+
+.don {
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+}
+
+.don h1 {
+    font-size: 2.5rem;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+.don p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 30px;
+}
+.thank-you-icon {
+    font-size: 4rem;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+.btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+.btn:hover {
+    background-color: #218838;
+}
