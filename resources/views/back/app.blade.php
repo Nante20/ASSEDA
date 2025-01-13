@@ -7,32 +7,25 @@
       content="width=device-width, initial-scale=1.0, user-scalable=0"
     />
 <title>@yield('title')</title>
-    {# Dashboard - Links #}
+
 @include('back.partials.styles')
-    {# Fin Dashbord Link #}
+
   </head>
 
   <body>
-    {# Main wrapper #}
-    <div class="main-wrapper">
-      {# Debut Header #}
-@include('back.partials.header')
-      {# Fin Header #}
-      {# ------------------ #}
-      {# Debut Sidebar #}
-      @include('back.partials.sidebar')
-      {# Fin Sidebar #} {# --------------------- #} {# Contenu de la page #}
-      <div class="page-wrapper">
-        <div class="content container-fluid">
-            <div class="page-header">
-                @yield('dashboard-header')
-            </div>
+
+<div class="main-wrapper">
+
+     @include('back.partials.header')
+
+    <div class="content container-fluid">
+
         @yield('dashboard-content')
 
     </div>
 
 
 @include('back.partials.scripts')
-
+</div>
   </body>
 </html>

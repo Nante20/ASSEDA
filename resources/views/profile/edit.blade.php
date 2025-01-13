@@ -1,6 +1,8 @@
 @extends('back.app')
 @section('title', 'Dashboard - Profile')
-@section('dashboard-header')
+
+@section('dashboard-content')
+
 <div class="row">
     <div class="col">
         <h3 class="page-title">Profile</h3>
@@ -10,8 +12,6 @@
         </ul>
     </div>
 </div>
-@endsection
-@section('dashboard-content')
 <div class="row">
     <div class="col-md-12">
         <div class="profile-header">
@@ -109,16 +109,30 @@
                         <h5 class="card-title">Modifier le mot de passe</h5>
                         <div class="row">
                             <div class="col-md-10 col-lg-6">
-                                <form>
+                                <form action="{{ route('password.update') }}" method="POST">
+                                    @csrf
+                                    @method('PUT')
                                     <div class="form-group">
                                         <label>Ancien mot de passe</label>
-                                        <input type="password" class="form-control"> </div>
+                                        <input type="password" name="current_password" class="form-control">
+                                        @error('current_password')
+                                            <p class="text-red-500 mt-2">{{ $message }}</p>
+                                        @enderror
+                                    </div>
                                     <div class="form-group">
                                         <label>Nouveau mot de passe</label>
-                                        <input type="password" class="form-control"> </div>
+                                        <input type="password" name="password" class="form-control">
+                                        @error('password')
+                                            <p class="text-red-500 mt-2">{{ $message }}</p>
+                                        @enderror
+                                    </div>
                                     <div class="form-group">
-                                        <label>Confirmer motde passe</label>
-                                        <input type="password" class="form-control"> </div>
+                                        <label>Confirmer mot de passe</label>
+                                        <input type="password" name="password_confirmation" class="form-control">
+                                        @error('password_confirmation')
+                                            <p class="text-red-500 mt-2">{{ $message }}</p>
+                                        @enderror
+                                    </div>
                                     <button class="btn btn-primary" type="submit">Enregistrer les modifications</button>
                                 </form>
                             </div>
