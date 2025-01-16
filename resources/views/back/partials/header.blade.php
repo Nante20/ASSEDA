@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a>
-
+                <a class="dropdown-item" href="{{ route('dashboard') }}">Gérer les pages</a>
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
                     <button class="btn dropdown-item">Deconnexion</button>
