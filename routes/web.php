@@ -15,7 +15,6 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'])
 
 
 
-
 Route::get('/', function () {
     return view('home');
 })->name('home');
@@ -32,6 +31,9 @@ Route::post('/contact', [ContactController::class, 'send'])->name('contactSend')
 Route::get('/donate', [DonationController::class, 'showForm'])->name('donate.form');
 Route::post('/donate', [DonationController::class, 'processPayment'])->name('donate.process');
 
+Route::get('/politique-utilisation', function () {
+    return view('policy');
+})->name('policy');
 
 // Route de succès après un paiement réussi
 Route::get('/donation/success', function () {
@@ -47,7 +49,7 @@ Route::middleware('auth')->group(function () {
 
 //routes CRUD nécessaires pour les pages
 
-Route::prefix('pages')->group(function () {
+Route::middleware('auth')->prefix('pages')->group(function () {
     Route::get('/', [PageController::class, 'index'])->name('pages.index'); // Liste des pages
     Route::get('/create', [PageController::class, 'create'])->name('pages.create'); // Formulaire de création
     Route::post('/', [PageController::class, 'store'])->name('pages.store'); // Enregistrement de la page

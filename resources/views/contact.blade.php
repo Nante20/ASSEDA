@@ -28,6 +28,14 @@
                 <label for="message">Message :</label>
                 <textarea id="message" name="message" required></textarea>
             </div>
+            <!-- Case à cocher pour accepter la politique -->
+            <div class="form-group">
+                 <input type="checkbox" id="accept_policy" name="accept_policy" value="1" required>
+                 <label for="accept_policy">
+                 J'accepte la <a href="{{ route('policy') }}" target="_blank">politique d'utilisation des données</a>.
+                 </label>
+            </div>
+
             <div class="form-group">
                 <button type="submit">Envoyer</button>
             </div>

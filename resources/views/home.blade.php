@@ -32,10 +32,10 @@
                     Faites un don ici!
                 </a>
             </div>
+
         </div>
     </div>
 </div>
-
 
 
 @endsection

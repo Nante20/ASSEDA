@@ -12,7 +12,6 @@
 <br>
 <br>
 <br>
-<br>
 <a href="{{ route('dashboard') }}" class="btn btn-primary">Dashboard</a>
 <h1>Gérer les Pages</h1>
 
