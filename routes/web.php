@@ -30,6 +30,8 @@ Route::post('/contact', [ContactController::class, 'send'])->name('contactSend')
 
 Route::get('/donate', [DonationController::class, 'showForm'])->name('donate.form');
 Route::post('/donate', [DonationController::class, 'processPayment'])->name('donate.process');
+Route::get('/donations', [DonationController::class, 'index'])->middleware('auth')->name('donations.index');
+
 
 Route::get('/politique-utilisation', function () {
     return view('policy');
@@ -56,7 +58,7 @@ Route::middleware('auth')->prefix('pages')->group(function () {
     Route::get('/{page}/edit', [PageController::class, 'edit'])->name('pages.edit'); // Formulaire d'édition
     Route::put('/{page}', [PageController::class, 'update'])->name('pages.update'); // Mise à jour de la page
     Route::delete('/{page}', [PageController::class, 'destroy'])->name('pages.destroy'); // Suppression de la page
-    Route::get('/pages/{slug}', [PageController::class, 'show'])->name('pages.show');
+    Route::get('/{slug}', [PageController::class, 'show'])->name('pages.show');
 });
 
 

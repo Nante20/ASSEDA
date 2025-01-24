@@ -19,7 +19,7 @@
 									<button class="btn btn-primary btn-block" type="submit">Se connecter</button>
 								</div>
 							</form>
-							<div class="text-center forgotpass"><a href="{{ route('password.request') }}">Mot de passe oublie?</a> </div>
+							<div class="text-center forgotpass"><a href="{{ route('password.request') }}">Mot de passe oublié?</a> </div>
 
 
 @endsection

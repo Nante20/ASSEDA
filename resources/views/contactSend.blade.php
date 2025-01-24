@@ -17,7 +17,7 @@
         </div>
         <div class="card-body">
             <p>Merci de nous avoir contacté! Votre message a bien été enregistré, nous vous recontacterons dès que possible.</p>
-            <a href="{{ route('home') }}" class="btn btn-primary">Back to Home</a>
+            <a href="{{ route('home') }}" class="btn btn-primary">Retour à l'accueil</a>
         </div>
     </div>
 </div>

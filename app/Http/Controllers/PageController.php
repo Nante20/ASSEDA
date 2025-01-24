@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Page;
-
+use Illuminate\Support\Facades\Auth;
 class PageController extends Controller
 {
     // Affiche la liste des pages
@@ -31,8 +31,11 @@ class PageController extends Controller
             'slug' => 'required|unique:pages,slug',
         ]);
 
+        $validatedData = $request->all();
+        $validatedData['user_id'] = Auth::id();
+
         // Création de la page
-        $page = Page::create($request->all());
+        $page = Page::create($validatedData);
 
         // Redirection vers la page nouvellement créée, en utilisant son slug
         return redirect()->route('pages.show', ['slug' => $page->slug])->with('success', 'Page créée avec succès.');
@@ -60,12 +63,14 @@ class PageController extends Controller
     }
 
     // Supprime une page
-    public function destroy(Page $page)
-    {
-        $page->delete();
+    public function destroy($id)
+{
+    $page = Page::findOrFail($id);
+    $page->delete();
 
-        return redirect()->route('pages.index')->with('success', 'Page supprimée avec succès.');
-    }
+    return redirect()->route('pages.index')->with('success', 'Page supprimée avec succès.');
+}
+
     // Affiche une page spécifique
     public function show($slug)
 {

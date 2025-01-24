@@ -1,5 +1,9 @@
 @extends('welcome')
 @section('titre', "Accueil")
+
+@section('meta_description', "Découvrez ASSEDA, une association basée à Oullins dédiée à aider les migrants, offrant un soutien précieux aux familles en difficulté.")
+@section('meta_keywords', 'ASSEDA, aide migrants, don, association, solidarité, Oullins, familles en difficulté')
+
 @section('content')
 <div class="container intro">
      <div class="row mt-4">

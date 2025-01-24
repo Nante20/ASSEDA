@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Stripe\Stripe;
 use Stripe\Charge;
 use Stripe\PaymentIntent;
+use App\Models\Donation;
+use Illuminate\Support\Facades\Auth;
 
 class DonationController extends Controller
 {
@@ -13,6 +15,13 @@ class DonationController extends Controller
 {
     return view('donate');
 }
+public function index()
+{
+    $donations = Donation::orderBy('created_at', 'desc')->get();
+
+    return view('back.donations.index', compact('donations'));
+}
+
 
 public function processPayment (Request $request)
 {
@@ -45,16 +54,24 @@ public function processPayment (Request $request)
 
         // Vérifier le statut du PaymentIntent
         if ($paymentIntent->status === 'succeeded') {
-            return redirect()->route('donation.success')->with('success', 'Merci pour votre don !');
+            // Enregistrer le don dans la base de données
+            Donation::create([
+                'email' => $request->input('email'),
+                'amount' => $request->input('amount'),
+                'payment_intent_id' => $paymentIntent->id,
+                'status' => 'succeeded',
+                'user_id' => Auth::check() ? Auth::id() : null,
+            ]);
+
+            return redirect()->route('donation.success')->with('success', 'Merci pour votre don !');
         } else {
             return redirect()->route('donation.form')->withErrors(['error' => 'Le paiement n\'a pas pu être complété.']);
         }
     } catch (\Stripe\Exception\CardException $e) {
-        // Gestion des erreurs Stripe (par exemple carte refusée)
         return redirect()->back()->withErrors(['error' => $e->getError()->message]);
     } catch (\Exception $e) {
-        // Gestion d'autres erreurs générales
         return redirect()->back()->withErrors(['error' => 'Erreur lors du traitement du paiement : ' . $e->getMessage()]);
     }
 }
 }
+

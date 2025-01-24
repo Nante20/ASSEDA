@@ -1,8 +1,8 @@
 @extends('auth.auth-layout')
 @section('title', "Page de réinitialisation de mot de passe")
 @section('auth-form')
-<h1>Mot de passe oublie?</h1>
-							<p class="account-subtitle">Entrer votre email pour obtenier le lien de reinitialisation</p>
+<h1>Mot de passe oublié?</h1>
+							<p class="account-subtitle">Entrez votre email pour obtenir le lien de réinitialisation</p>
                             @if (session('status'))
                             <div class="alert alert-success mb-4 text-green-600">
                                 {{ session('status') }}

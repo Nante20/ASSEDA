@@ -6,6 +6,11 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=0"
     />
+
+    <meta name="description" content="@yield('meta_description', 'Description par défaut du site.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'association, migrants, aide, solidarité, Oullins')">
+    <meta name="author" content="ASSEDA">
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>@yield('titre')</title>
 @vite('resources/css/app.css')

@@ -1,19 +1,19 @@
 <?php
-
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Page extends Model
+class Donation extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'title',
-        'content',
-        'slug',
+        'email',
+        'amount',
+        'payment_intent_id',
+        'status',
         'user_id',
     ];
-
 }
+
