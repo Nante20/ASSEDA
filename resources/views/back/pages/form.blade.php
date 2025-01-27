@@ -37,5 +37,6 @@
             </form>
         </div>
     </div>
+    <a href="{{ route('dashboard') }}" class="btn btn-primary">Retour au Dashboard</a>
 </div>
 @include('back.partials.scripts')

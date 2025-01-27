@@ -37,6 +37,6 @@
         </table>
     </div>
     <br>
-    <a href="{{ route('dashboard') }}" class="btn btn-secondary">Retour à gérer les pages</a>
+    <a href="{{ route('dashboard') }}" class="btn btn-primary">Retour au Dashboard</a>
 </body>
 </html>

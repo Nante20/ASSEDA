@@ -1,14 +1,14 @@
 @extends('back.app')
-@section('title', 'Dashboard - Profile')
+@section('title', 'Dashboard - Profil')
 
 @section('dashboard-content')
 
 <div class="row">
     <div class="col">
-        <h3 class="page-title">Profile</h3>
+        <h3 class="page-title">Profil</h3>
         <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
-            <li class="breadcrumb-item active">Profile</li>
+            <li class="breadcrumb-item active">Profil</li>
         </ul>
     </div>
 </div>

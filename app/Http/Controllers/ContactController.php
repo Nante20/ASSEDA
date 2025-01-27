@@ -21,6 +21,7 @@ class ContactController extends Controller
             'name' => $validatedData['name'],
             'email' => $validatedData['email'],
             'message' => $validatedData['message'],
+            'statut' => ContactMessage::STATUT_NON_LU,
             'accept_policy' => 'accepted', // Validation pour la case à cocher
         ]);
 

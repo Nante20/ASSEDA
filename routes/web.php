@@ -7,7 +7,7 @@ use App\Http\Controllers\DonationController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\DashboardController;
-
+use App\Http\Controllers\AdminContactMessageController;
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])
     ->middleware(['auth', 'verified'])
@@ -31,7 +31,6 @@ Route::post('/contact', [ContactController::class, 'send'])->name('contactSend')
 Route::get('/donate', [DonationController::class, 'showForm'])->name('donate.form');
 Route::post('/donate', [DonationController::class, 'processPayment'])->name('donate.process');
 Route::get('/donations', [DonationController::class, 'index'])->middleware('auth')->name('donations.index');
-
 
 Route::get('/politique-utilisation', function () {
     return view('policy');
@@ -59,6 +58,12 @@ Route::middleware('auth')->prefix('pages')->group(function () {
     Route::put('/{page}', [PageController::class, 'update'])->name('pages.update'); // Mise à jour de la page
     Route::delete('/{page}', [PageController::class, 'destroy'])->name('pages.destroy'); // Suppression de la page
     Route::get('/{slug}', [PageController::class, 'show'])->name('pages.show');
+});
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/messages', [AdminContactMessageController::class, 'index'])->name('back.messages.index');
+    Route::patch('/messages/{id}/read', [AdminContactMessageController::class, 'markAsRead'])->name('back.messages.markAsRead');
 });
 
 

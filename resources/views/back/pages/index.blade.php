@@ -6,46 +6,81 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=0"
     />
+    <title>Dashboard</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
-<div>
+  </head>
 <br>
 <br>
-<br>
-<br>
-<a href="{{ route('dashboard') }}" class="btn btn-primary">Dashboard</a>
-<h1>Gérer les Pages</h1>
+<body>
+    <div class="container my-5">
+        <!-- En-tête principale -->
+        <h1 class="text-center mb-4">Dashboard</h1>
 
-    <a href="{{ route('pages.create') }}" class="btn btn-secondary">Créer une nouvelle page</a>
+        <!-- Menu de navigation -->
+        <nav class="nav nav-pills mb-4">
+            <a class="nav-link active" href="{{ route('dashboard') }}">Gérer les pages</a>
+            <a class="nav-link" href="{{ route('back.messages.index') }}">Gérer les messages</a>
+            <a class="nav-link" href="{{ route('donations.index') }}">Liste des dons</a>
+        </nav>
 
-    @if(isset($pages) && $pages->isEmpty())
-    <p>Aucune page trouvée.</p>
-    @else
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Titre</th>
-                    <th>Slug</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach ($pages as $page)
-                    <tr>
-                        <td>{{ $page->title }}</td>
-                        <td>{{ $page->slug }}</td>
-                        <td>
-                            <a href="{{ route('pages.edit', $page) }}" class="btn btn-warning">Modifier</a>
-                            <form action="{{ route('pages.destroy', $page) }}" method="POST" style="display:inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Supprimer</button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-            </tbody>
-        </table>
-    @endif
-     </div>
+        <!-- Contenu principal du Dashboard : Gérer les pages -->
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h2 class="card-title mb-0">Gérer les pages</h2>
+                <!-- Bouton pour créer une nouvelle page -->
+                <a href="{{ route('pages.create') }}" class="btn btn-success btn-sm">+ Nouvelle page</a>
+            </div>
+            <div class="card-body">
+                <!-- Placez ici le contenu principal de "Gérer les pages" -->
+                <p class="mb-4">Bienvenue dans la section "Gérer les pages". Ici, vous pouvez voir, créer, modifier et supprimer des pages principales de votre site.</p>
+
+                <!-- Exemple de tableau pour Gérer les pages -->
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Titre de la page</th>
+                            <th>Slug</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($pages as $page)
+                            <tr>
+                                <td>{{ $page->title }}</td>
+                                <td>{{ $page->slug }}</td>
+                                <td>
+                                    <a href="{{ route('pages.edit', $page->id) }}" class="btn btn-sm btn-primary">Modifier</a>
+                                    <form action="{{ route('pages.destroy', $page->id) }}" method="POST" class="d-inline">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-sm btn-danger">Supprimer</button>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+<body>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Sélectionnez tous les formulaires de suppression
+            document.querySelectorAll('form').forEach(form => {
+                // Vérifiez si le formulaire contient un bouton de suppression
+                const deleteButton = form.querySelector('button[type="submit"].btn-danger');
+                if (deleteButton) {
+                    // Ajoutez un écouteur d'événement
+                    deleteButton.addEventListener('click', function(event) {
+                        if (!confirm('Êtes-vous sûr de vouloir supprimer cet élément ?')) {
+                            event.preventDefault(); // Annulez l'action si l'utilisateur annule
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+
      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
-

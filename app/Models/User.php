@@ -46,4 +46,9 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+    public function setImageAttribute($value)
+{
+    $this->attributes['image'] = $value ?? 'default-avatar.png'; // Ajoute une valeur par défaut
+}
+
 }

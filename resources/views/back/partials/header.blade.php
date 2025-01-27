@@ -26,8 +26,7 @@
                     </div>
                 </div>
                 <a class="dropdown-item" href="{{ route('profile.edit') }}">Profile</a>
-                <a class="dropdown-item" href="{{ route('dashboard') }}">Gérer les pages</a>
-                <a class="dropdown-item" href="{{ route('donations.index') }}">Liste des dons</a>
+                <a class="dropdown-item" href="{{ route('dashboard') }}">Dashboard</a>
 
                 <form action="{{ route('logout') }}" method="POST">
                     @csrf
@@ -46,3 +45,4 @@
         </form>
     </div>
 </div>
+

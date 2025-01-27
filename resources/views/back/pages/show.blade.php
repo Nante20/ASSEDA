@@ -14,6 +14,6 @@
         <p><strong>Slug:</strong> {{ $page->slug }}</p>
         <p><strong>Contenu:</strong> {!! nl2br(e($page->content)) !!}</p>
 
-        <a href="{{ route('pages.index') }}" class="btn btn-secondary">Retour à la liste des pages</a>
+        <a href="{{ route('dashboard') }}" class="btn btn-primary">Retour au Dashboard</a>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
