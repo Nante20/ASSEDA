@@ -13,7 +13,6 @@ class Donation extends Model
         'amount',
         'payment_intent_id',
         'status',
-        'user_id',
-    ];
+  ];
 }
 

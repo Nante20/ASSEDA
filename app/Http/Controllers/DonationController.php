@@ -60,7 +60,6 @@ public function processPayment (Request $request)
                 'amount' => $request->input('amount'),
                 'payment_intent_id' => $paymentIntent->id,
                 'status' => 'succeeded',
-                'user_id' => Auth::check() ? Auth::id() : null,
             ]);
 
             return redirect()->route('donation.success')->with('success', 'Merci pour votre don !');

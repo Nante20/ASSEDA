@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Liste des messages reçus</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
+    <h1 class="text-center mb-4">Messages reçus</h1>
 
         <div class="container my-5">
 
-        <h1 class="text-center mb-4">Messages reçus</h1>
+
 
         <!-- Notification de succès -->
         @if(session('success'))
@@ -60,9 +61,10 @@
             </table>
         </div>
 
-        <a href="{{ route('dashboard') }}" class="btn btn-primary">Retour au Dashboard</a>
-
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <div>
+        <a href="{{ route('dashboard') }}" class="btn btn-primary">Retour au Dashboard</a>
+    </div>
+
 </body>
 </html>

@@ -11,9 +11,8 @@
     <meta name="keywords" content="@yield('meta_keywords', 'association, migrants, aide, solidarité, Oullins')">
     <meta name="author" content="ASSEDA">
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <title>@yield('titre')</title>
-@vite('resources/css/app.css')
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
 
   <body>
@@ -30,6 +29,6 @@
 
 
 @include('partials.footer')
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
   </body>
 </html>
