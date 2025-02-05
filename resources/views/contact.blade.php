@@ -11,15 +11,19 @@
             <h2 class="mb-4 text-center">Contactez-nous</h2>
 
             <!-- Affichage des erreurs -->
-            @if ($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+           <!-- Vérifie si des erreurs de validation sont présentes -->
+@if ($errors->any())
+<!-- Affiche une alerte de type "danger" si des erreurs sont détectées -->
+<div class="alert alert-danger">
+    <ul>
+        <!-- Parcourt toutes les erreurs et les affiche sous forme de liste -->
+        @foreach ($errors->all() as $error)
+            <!-- Affiche chaque erreur dans un élément de liste -->
+            <li>{{ $error }}</li>
+        @endforeach
+    </ul>
+</div>
+@endif
 
             <!-- Formulaire -->
             <form action="{{ route('contactSend') }}" method="post" class="bg-light p-4 rounded shadow">
@@ -34,7 +38,7 @@
                 <!-- Email -->
                 <div class="mb-3">
                     <label for="email" class="form-label">Email :</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
+                    <input type="email" id="email" name="email" class="form-control" value="{{ old('email') }}" placeholder="Email" required>
                 </div>
 
                 <!-- Message -->

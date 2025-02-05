@@ -5,35 +5,32 @@
 @section('meta_keywords', 'ASSEDA, aide migrants, don, association, solidarité, Oullins, familles en difficulté')
 
 @section('content')
-<div class="container py-5">
+<div class="container container-support">
     <!-- Conteneur des colonnes -->
     <div class="row">
         <!-- Première colonne -->
         <div class="col-md-6">
             <h1 class="mb-4">Nous avons besoin de vous et de vos participations</h1>
-            <img src="{{ asset('images/soutenir.jpg') }}" class="img-fluid rounded mb-4" alt="image">
+            <img src="{{ asset('images/soutenir.jpg') }}" class="img-fluid rounded shadow-sm mb-4" alt="image">
             <p>Vous pouvez nous aider :</p>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">
-                    Si vous êtes propriétaire d'un petit logement inoccupé, en le louant à l'association à un tarif modéré
-                    (l'association vous garantit de le libérer quand vous le souhaitez, et de veiller au respect des lieux).
-                    Nous RECHERCHONS des PETITS APPARTEMENTS sur Oullins ou aux environs.
+                    <strong>🏠 Louez votre logement :</strong> Si vous êtes propriétaire d'un petit logement inoccupé, louez-le à l'association à un tarif modéré.
                 </li>
                 <li class="list-group-item">
-                    En participant au loyer solidaire : un prélèvement mensuel de 10€, 20€, 30€ ou plus pour nous permettre de louer un appartement pour héberger une famille.
-                    Actuellement nous louons 3 appartements dans lesquels sont logées 3 familles.
+                    <strong>💰 Participez au loyer solidaire :</strong> Un prélèvement mensuel de 10€, 20€, 30€ ou plus pour héberger une famille.
                 </li>
                 <li class="list-group-item">
-                    En faisant un don ponctuel à l'association : les dons ponctuels nous permettent d'aider à la vie quotidienne (bus, médicaments, ...)
+                    <strong>🎁 Faites un don ponctuel :</strong> Vos dons nous permettent d'aider à la vie quotidienne (bus, médicaments...).
                 </li>
                 <li class="list-group-item">
-                    En accueillant des personnes suivies par l'association ponctuellement ou en alternance avec d'autres membres de l'association.
+                    <strong>🏡 Hébergez temporairement :</strong> Accueillez des personnes suivies par l'association ponctuellement.
                 </li>
                 <li class="list-group-item">
-                    En acceptant de suivre une famille : liens, conseils, ...
+                    <strong>🤝 Suivez une famille :</strong> Créez un lien avec une famille pour l’aider.
                 </li>
                 <li class="list-group-item">
-                    En participant aux différentes actions que nous organisons.
+                    <strong>📅 Participez aux événements :</strong> Engagez-vous dans nos actions.
                 </li>
             </ul>
         </div>
@@ -44,24 +41,24 @@
             <div class="mb-4">
                 <a href="{{ route('donate.form') }}" class="btn btn-primary btn-lg">Faites un don ici !</a>
             </div>
-            <div class="border rounded p-3 bg-light">
-                <h3 class="mb-3">Faites un don par chèque</h3>
+            <div class="border-rounded-box">
+                <h3 class="section-title mb-3">📜 Faites un don par chèque</h3>
                 <p>
-                    Envoyez votre chèque accompagné de votre adresse postale pour que nous puissions vous envoyer le reçu fiscal :
+                    Envoyez votre chèque avec votre adresse postale pour recevoir un reçu fiscal :
                     <strong>ASSEDA, 13 rue Pasteur, 69600 Oullins</strong>
                 </p>
 
-                <h3 class="mt-4 mb-3">Participez au loyer solidaire</h3>
+                <h3 class="section-title mt-4 mb-3">💳 Participez au loyer solidaire</h3>
                 <p>
-                    Pour participer au loyer solidaire, vous pouvez faire un virement mensuel de 10€, 20€ ou plus.
+                    Faites un virement mensuel de 10€, 20€ ou plus.
                     <a href="https://www.asseda.fr/_files/ugd/10c70c_992d54bc701146c3bf10cfecc0a42716.pdf" target="_blank">
-                        Téléchargez la plaquette d'information
-                    </a> (nb: contient le RIB de l'association).
+                        📥 Téléchargez la plaquette d'information
+                    </a> (avec le RIB de l'association).
                 </p>
 
-                <h3 class="mt-4 mb-3">Adhérez</h3>
+                <h3 class="section-title mt-4 mb-3">📝 Adhérez</h3>
                 <p>
-                    <a href="{{ asset('images/bulletin_adhesion (4).doc') }}" class="btn btn-link">Téléchargez le bulletin d'adhésion</a>
+                    <a href="{{ asset('images/bulletin_adhesion (4).doc') }}" class="btn btn-link">📄 Téléchargez le bulletin d'adhésion</a>
                 </p>
             </div>
         </div>

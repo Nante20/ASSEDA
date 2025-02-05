@@ -59,7 +59,7 @@ class PageController extends Controller
 
         $page->update($request->all());
 
-        return redirect()->route('pages.index')->with('success', 'Page mise à jour avec succès.');
+        return redirect()->route('dashboard')->with('success', 'Page mise à jour avec succès.');
     }
 
     // Supprime une page
@@ -68,7 +68,7 @@ class PageController extends Controller
     $page = Page::findOrFail($id);
     $page->delete();
 
-    return redirect()->route('pages.index')->with('success', 'Page supprimée avec succès.');
+    return redirect()->route('dashboard')->with('success', 'Page supprimée avec succès.');
 }
 
     // Affiche une page spécifique

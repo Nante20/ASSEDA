@@ -262,3 +262,104 @@ footer .footer-section ul li a:hover {
 .btn:hover {
     background-color: #218838;
 }
+
+/* Ajoute un peu d'espace autour */
+.container-homepage {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Style amélioré pour le titre */
+.container-homepage h2 {
+    font-weight: bold;
+    color: #2c3e50;
+    border-bottom: 3px solid #007bff;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Amélioration de la mise en page */
+.container-homepage p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+}
+
+/* Style amélioré pour l’image */
+.container-homepage img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Boîte de don plus attrayante */
+.donation-box {
+    background: #f8f9fa;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Bouton de don plus visible */
+.donation-box .btn-primary {
+    background-color: hwb(120 9% 25%);
+    border: none;
+    font-weight: bold;
+}
+
+.donation-box .btn-primary:hover {
+    background-color: hwb(120 9% 25%);
+}
+
+/* Conteneur spécifique à la page */
+.container-support {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Style amélioré pour le titre principal */
+.container-support h1 {
+    font-weight: bold;
+    color: #2c3e50;
+    border-bottom: 3px solid #28a745;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Liste améliorée */
+.list-group-item {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #555;
+    background: #f8f9fa;
+    border-left: 5px solid #28a745;
+    padding: 15px;
+}
+
+/* Amélioration du bouton */
+.container-support .btn-primary {
+    background-color: #28a745;
+    border: none;
+    font-weight: bold;
+}
+
+.container-support .btn-primary:hover {
+    background-color: #28a745;
+}
+
+/* Amélioration de la boîte d'information */
+.border-rounded-box {
+    background: #f8f9fa;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajout d'icônes devant les sections */
+.section-title::before {
+    content: "⭐ ";
+    color: #007bff;
+    font-size: 1.2rem;
+}

@@ -1,3 +1,4 @@
+@include('back.partials.styles')
 <!DOCTYPE html>
 <html lang="fr">
   <head>
@@ -6,7 +7,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=0"
     />
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 <div class="container">
         <h1>{{ $page->title }}</h1>
@@ -16,3 +16,4 @@
 
         <a href="{{ route('dashboard') }}" class="btn btn-primary">Retour au Dashboard</a>
     </div>
+@include('back.partials.scripts')

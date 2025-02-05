@@ -12,6 +12,7 @@
     <meta name="author" content="ASSEDA">
 
     <title>@yield('titre')</title>
+    <link rel="icon" href="data:," />
     @vite(['resources/css/app.css', 'resources/js/app.js'])
   </head>
 

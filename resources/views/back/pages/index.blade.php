@@ -7,7 +7,8 @@
       content="width=device-width, initial-scale=1.0, user-scalable=0"
     />
     <title>Dashboard</title>
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
+
   </head>
 <br>
 <br>
@@ -31,12 +32,12 @@
                 <a href="{{ route('pages.create') }}" class="btn btn-success btn-sm">+ Nouvelle page</a>
             </div>
             <div class="card-body">
-                <!-- Placez ici le contenu principal de "Gérer les pages" -->
+                <!-- Le contenu principal de "Gérer les pages" -->
                 <p class="mb-4">Bienvenue dans la section "Gérer les pages". Ici, vous pouvez voir, créer, modifier et supprimer des pages principales de votre site.</p>
 
-                <!-- Exemple de tableau pour Gérer les pages -->
+                <!-- Le tableau pour Gérer les pages -->
                 <table class="table table-bordered table-striped">
-                    <thead class="table-dark">
+                    <thead style="background-color: black; color: rgb(0, 229, 255);">
                         <tr>
                             <th>Titre de la page</th>
                             <th>Slug</th>
@@ -63,6 +64,7 @@
             </div>
         </div>
     </div>
+    <script src="{{ asset('js/app.js') }}"></script>
 <body>
 
     <script>
